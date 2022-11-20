@@ -1,0 +1,54 @@
+{% extends './layout.html' %}
+
+{% block title %}
+
+<center><h1 class="banner">Psswords</h1> </center>
+
+{% endblock %}
+
+{% block body %}
+<center> 
+<div class="nav">
+    <ul>
+
+        <li ><a href="http://127.0.0.1:8000/password/incluir">New Page</a>
+        </li>
+        <li ><a href="http://127.0.0.1:8000/actualizar">Update passwords</a>
+        </li>
+        <li ><a href="http://127.0.0.1:8000/list">Search</a>
+        <li ><a id="borrar" onclick=formulario() type="submit">Delete</a>
+        
+    </ul>
+
+</div>
+
+
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Page</th>
+                    <th>User</th>
+                    <th>Password</th>
+                    <th>Date</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="contenido">
+
+
+            </tbody>
+
+        </table>
+
+        
+    </center>
+
+    <a id="ej">
+            
+        </a>
+
+   
+
+{% endblock %}
