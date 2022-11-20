@@ -4,6 +4,8 @@ from main import *
 
 
 app = Flask(__name__)
+
+# Your port
 port='http://127.0.0.1:8000/'
 
 @app.route('/', methods=["POST", "GET"])
