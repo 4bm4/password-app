@@ -29,6 +29,7 @@ def transf_arr_clase (arry):
         clase=pss(pag=arry[2],fecha=arry[4],usu=arry[1],password=[arry[3]],act=aux,id=arry[0],ultima=aux3 )
         return(clase)
 
+
     elif (isinstance(arry,list)):
         clase=[]
         for i in arry:
