@@ -3,8 +3,6 @@ from password.funtion_pss import *
 from password.clas import *
 from password.DB import *
 
-
-
 def introducir_clase(clase):
     create_tabla()
     paginas_ant=buscar_pag(clase.pag)
