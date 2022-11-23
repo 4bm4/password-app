@@ -59,8 +59,13 @@ The project consists of the creation of a password management API in which sensi
 
 <img width="1243" alt="Captura de pantalla_20221123_171332" src="https://user-images.githubusercontent.com/118636000/203596432-b4a0a893-781e-4d08-804a-9a1d4cf3052a.png">
 
+### DB
+<img width="805" alt="pssword_encript" src="https://user-images.githubusercontent.com/118636000/203598412-d2cc652d-d398-40c9-a4a4-c6b1a6495d68.png"> 
+The information is recorded encrypted in the DB using the key 
+
 ### Video
 https://user-images.githubusercontent.com/118636000/203595681-5f70ae39-6bcc-46c8-acfd-c982c01e6d06.mp4
+
 
 
 
