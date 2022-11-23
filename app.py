@@ -5,7 +5,6 @@ from main import *
 
 app = Flask(__name__)
 
-# Your port
 port='http://127.0.0.1:8000/'
 
 @app.route('/', methods=["POST", "GET"])
@@ -63,13 +62,13 @@ def buscar():
          return (render_template("buscador_pag.html"))
 
 
-@app.route('/list', methods=["POST","GET"])
+@app.route('/seach', methods=["POST","GET"])
 def list():
     if (request.method == "POST"):
         pag =  request.form["pag"]
         result=buscar_pag(pag)
         rows =result
-        return render_template("list.html",rows = rows)
+        return render_template("seach.html",rows = rows)
     else:
          return (render_template("buscador_pag.html"))
 
