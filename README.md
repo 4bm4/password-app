@@ -1,10 +1,9 @@
 # Password-app
 
 ![APM](https://img.shields.io/apm/l/vim-mode?style=plastic)
-
-
    
 ![PSSWORDS](https://user-images.githubusercontent.com/118636000/202903286-cef70e58-ed50-4d11-9a0a-27cd360b0128.png)
+
 
 ## Index
 
@@ -28,10 +27,12 @@
 ## Project description
 The project consists of the creation of a password management API in which sensitive information is encrypted within a SQL database. Passwords are generated randomly and will be updated after 30 days if the user wishes.
 
-## Objectives
-- Create random passwords
-- Securely store passwords
-- Automatic password update
+## Objectives 
+- Create random passwords ✅
+- Securely store passwords ✅
+- Automatic password update ✅
+- Save the key on a pen drive 🚧 In process 🚧
+- Ask for the key for next time you use it or write the key manually 🚧 In process 🚧
 
 ## How to use
 1. Install libraries
