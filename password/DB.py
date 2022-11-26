@@ -17,9 +17,23 @@ def create_tabla():
         db.commit()
         db.close()
     
+def create_tabla_backup():
+    if(not os.path.isfile("psswords_backup.db")):
+        db=sqlite3.connect('psswords_backup.db')
+        manejo_db=db.cursor()
+        manejo_db.execute(""" CREATE TABLE IF NOT EXISTS psswords (
+        id text,
+        usuario text,
+        pagina text,
+        password text,
+        fecha text,
+        act integer,
+        ultima integer)""")
+        db.commit()
+        db.close()
 
-def insert_element(elemento):
-    db=sqlite3.connect('psswords.db')
+def insert_element(DB,elemento):
+    db=sqlite3.connect(DB)
     manejo_db=db.cursor()
     if (elemento.act==True):
         elemento_aux=1

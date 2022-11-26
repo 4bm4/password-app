@@ -6,13 +6,15 @@ from password.DB import *
 
 def introducir_clase(clase):
     create_tabla()
+    create_tabla_backup()
     paginas_ant=buscar_pag(clase.pag)
     if (paginas_ant):
         for i in paginas_ant:
             i.ultima=False
             update_element_ultima(i.id,i.ultima)
     clase_encrip = all_cryp(clase)
-    insert_element(clase_encrip)
+    insert_element("psswords_backup.db",clase_encrip)
+    insert_element("psswords.db",clase_encrip)
 
 
 def buscar_pag(pag: str):
