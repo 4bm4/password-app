@@ -10,8 +10,9 @@ port='http://127.0.0.1:8000/'
 def index():
     if (request.method == "POST"):
         pag =  request.form["borrar"]
-        print(pag)
-        delect (pag)
+        usu =  request.form["borrar_usu"]
+        
+        delect (pag,usu)
         return (render_template("index.html"))
     else:
         create_tabla ()

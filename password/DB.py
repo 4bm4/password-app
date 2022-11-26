@@ -32,7 +32,7 @@ def create_tabla_backup():
         db.commit()
         db.close()
 
-def insert_element(DB,elemento):
+def insert_element(DB:str,elemento):
     db=sqlite3.connect(DB)
     manejo_db=db.cursor()
     if (elemento.act==True):

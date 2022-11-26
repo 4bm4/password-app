@@ -97,6 +97,7 @@ function formulario() {
         <h2 class="titulo">Delete page</h2>
         <br>
         <input type="text" name="borrar" id="borrar" placeholder="Page"/></br>
+        <input type="text" name="borrar_usu" id="borrar_usu" placeholder="User (Optinal)"/></br>
         <input type="submit" value="Delete" />
         <br>
 
