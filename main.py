@@ -1,6 +1,7 @@
 from password.encryp import all_cryp, all_decryp
 from password.funtion_pss import *
 from password.clas import *
+from datetime import *
 from password.DB import *
 
 def introducir_clase(clase):

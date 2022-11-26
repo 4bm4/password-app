@@ -1,17 +1,24 @@
 const cabecera = document.querySelector('cabecera');
-const detalles = document.querySelector('detalles')
+const detalles = document.querySelector('detalles');
+const eliminar = document.getElementById('ej');
+
 
 window.onload=function traer() {
     fetch("./password")
         .then(res => res.json())
         .then(datos => {
-           
-            tabla(datos)
+            if (Object.keys(datos).length === 0){
+                cont.innerHTML+=
+                ` 
+                <h1> No hay DB! </h1>
+                
+                ` 
+            }else{
+                tabla(datos)
+            }
+            
         })
-    
-
 }
-
 
 function tabla(datos) {
 
@@ -74,30 +81,32 @@ function copiar(lo_que_copias) {
 }
 
 function formulario() {
-
-
-if( document.getElementById("formu")){
-    var elemen= document.getElementById('formu')
-    elemen.parentNode.removeChild(elemen)
- 
-
-}
-else{
     
-    ej.innerHTML+=
-    ` 
-    <form  id="formu" action="#" method="POST">
+    if(eliminar.childElementCount===1)
+    {
+        var elemen= document.getElementById('formu')
+        elemen.parentNode.removeChild(elemen)
+        
+    }
+    else{
+    
+        eliminar.innerHTML+=
+        ` 
+        <form  id="formu" action="#" method="POST">
 
-    <h2 class="titulo">Delete page</h2>
-    <br>
-    <input type="text" name="borrar" id="borrar" placeholder="Page"/></br>
-    <input type="submit" value="Delete" />
-    <br>
+        <h2 class="titulo">Delete page</h2>
+        <br>
+        <input type="text" name="borrar" id="borrar" placeholder="Page"/></br>
+        <input type="submit" value="Delete" />
+        <br>
 
-    </form>
-    ` 
+        </form>
+        ` 
+    }
+
+
+
 }
 
 
 
-}
