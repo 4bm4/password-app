@@ -105,9 +105,71 @@ function formulario() {
         ` 
     }
 
-
-
 }
 
 
+function buscador() {
+    const paginas=[];
+    fetch("./password")
+        .then(res => res.json())
+        .then(datos => {
+            paginas.push(...datos);
+        }
+        )
+        // console.log(paginas)
+    return(paginas)
+}
 
+function findMatches(wordToSearch, paginas) {
+    return paginas.filter(pagina => {
+        const regex = new RegExp(wordToSearch, 'gi');
+        return pagina.pag.match(regex);
+    })
+}
+
+const search = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+search.addEventListener('change', displayMatches);
+
+const paginas=buscador();
+// function displayMatches(e) {
+//     const matchedArray = findMatches(e.target.value, paginas);
+//     const html = matchedArray.map(pagina => {
+//         return `
+//         <li>
+//             <span class="PAGINA">${pagina.pag}</span>
+         
+//         </li>
+//     `;
+// }).join('');
+// console.log(html);
+// suggestions.innerHTML = html;
+// }
+
+function displayMatches(e) {
+    const matchedArray = findMatches(e.target.value, paginas);
+    const html = matchedArray.map(pagina => {
+        const regex = new RegExp(e.target.value, 'gi');
+        const pagNames = pagina.pag.replace(regex,
+            `<span class="hl">${e.target.value}</span>`);
+        return `
+        <div>
+            <span onclick=alseleccionar("${pagina.pag}") class="PAGINA">${pagNames}</span>
+        </div>
+    `;
+    }).join('');
+    console.log(html);
+    suggestions.innerHTML = html;
+}
+
+function alseleccionar(p){
+    // document.pag.value=p;
+    // document.buscar.value=p;
+    document.buscar.innerHTML+=
+    `
+    <input type="hidden" value=${p} class="search" type="text" name="pag" id="pag" placeholder="Page" maxlength="50"/></br>
+    `;
+    document.buscar.submit(p);
+    
+}
