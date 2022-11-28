@@ -135,12 +135,24 @@ li a:hover{
     padding: 10px;
     border: none;
     border-radius: 1px;
+    padding-left:175px ;
+    display:block;
+    
 }
 
 .PAGINA:hover {
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 4px;
+    padding-top: 4px;
     text-decoration:none;
-    color:#d1d5d3;
+    color:#8dcbfa;
+    background-color: #35393cb4;
     cursor:pointer;
+    border-radius: 6px;
+    border: 100px;
+    
   }
+
+  /* .field:has(input:required) label::after{
+    content: "*";
+    color:aquamarine
+  } */

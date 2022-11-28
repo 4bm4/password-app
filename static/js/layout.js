@@ -95,8 +95,8 @@ function formulario() {
         <form  id="formu" action="#" method="POST">
 
         <h2 class="titulo">Delete page</h2>
-        <br>
-        <input type="text" name="borrar" id="borrar" placeholder="Page"/></br>
+        <br class="field">
+        <input type="text" name="borrar" id="borrar" placeholder="Page" required/></br>
         <input type="text" name="borrar_usu" id="borrar_usu" placeholder="User (Optinal)"/></br>
         <input type="submit" value="Delete" />
         <br>
@@ -130,7 +130,7 @@ function findMatches(wordToSearch, paginas) {
 const search = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 
-search.addEventListener('change', displayMatches);
+search.addEventListener('keyup', displayMatches);
 
 const paginas=buscador();
 // function displayMatches(e) {
