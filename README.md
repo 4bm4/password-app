@@ -1,8 +1,11 @@
 # Password-app
 
 ![APM](https://img.shields.io/apm/l/vim-mode?style=plastic)
-   
-![PSSWORDS](https://user-images.githubusercontent.com/118636000/202903286-cef70e58-ed50-4d11-9a0a-27cd360b0128.png)
+  <div align="center">
+  <img src="https://user-images.githubusercontent.com/118636000/205105412-dd3d0db2-bfba-4daf-97dc-8284926f7eac.png"  width="300"/>
+  </div>
+  
+
 
 
 ## Index
@@ -31,8 +34,7 @@ The project consists of the creation of a password management API in which sensi
 - Create random passwords ✅
 - Securely store passwords ✅
 - Automatic password update ✅
-- Save the key on a pen drive 🚧 In process 🚧
-- Ask for the key for next time you use it or write the key manually 🚧 In process 🚧
+
 
 ## How to use
 1. Install libraries
@@ -41,31 +43,38 @@ The project consists of the creation of a password management API in which sensi
 ## Application features and demonstration
 
 ### Home
-<img width="1245" alt="Captura de pantalla_20221123_171145" src="https://user-images.githubusercontent.com/118636000/203595800-d1590df4-e7cb-4eb3-a1a0-87d3750e26cd.png">
+
+<img width="638" alt="Captura de pantalla_20221201_163739" src="https://user-images.githubusercontent.com/118636000/205111852-b4d62ff2-54e5-481d-95c0-3387a247db47.png">
 
 ### Add new page
-<img width="1246" alt="Captura de pantalla_20221123_171210" src="https://user-images.githubusercontent.com/118636000/203595909-c4920baf-58a5-4ee3-8454-fd0b9f2969d5.png">
+
+<img width="637" alt="Captura de pantalla_20221201_163811" src="https://user-images.githubusercontent.com/118636000/205111915-2efebfb6-3fc7-488f-a0ab-f8340e2b636c.png">
 
 ### Update the pages 
-<img width="1244" alt="Captura de pantalla_20221123_171244" src="https://user-images.githubusercontent.com/118636000/203596229-09813697-1277-4dad-b052-6a586d732c96.png">
-
-   &rarr; Update pages created more than 30 days ago
+<img width="638" alt="Captura de pantalla_20221201_163739" src="https://user-images.githubusercontent.com/118636000/205112745-127672c7-0de6-4a04-98c8-f3620418ee76.png">
+Update pages created more than 30 days ago
 
 ### Search 
 
-<img width="1243" alt="Captura de pantalla_20221123_171257" src="https://user-images.githubusercontent.com/118636000/203596303-e8900fe2-d5ca-48ba-84e6-b9146301f5cd.png">
 
+<img width="634" alt="Captura de pantalla_20221201_163822" src="https://user-images.githubusercontent.com/118636000/205112092-c770adca-b8e1-4874-b21a-0e75c495a237.png">
+
+<img width="635" alt="Captura de pantalla_20221201_163836" src="https://user-images.githubusercontent.com/118636000/205112098-a5552f14-5f12-4c6d-8df4-335ffe82bdb6.png">
 
 ### Delete
+<img width="636" alt="Captura de pantalla_20221201_163846" src="https://user-images.githubusercontent.com/118636000/205112139-175f855f-dd17-49d5-b678-6ae29ddb3514.png">
 
-<img width="1243" alt="Captura de pantalla_20221123_171332" src="https://user-images.githubusercontent.com/118636000/203596432-b4a0a893-781e-4d08-804a-9a1d4cf3052a.png">
 
 ### DB
 <img width="805" alt="pssword_encript" src="https://user-images.githubusercontent.com/118636000/203598412-d2cc652d-d398-40c9-a4a4-c6b1a6495d68.png"> 
 The information is recorded encrypted in the DB using the key 
 
 ### Video
-https://user-images.githubusercontent.com/118636000/203595681-5f70ae39-6bcc-46c8-acfd-c982c01e6d06.mp4
+
+
+
+https://user-images.githubusercontent.com/118636000/205112966-59b1f40c-c15d-483a-9d9b-459c509a5c2a.mp4
+
 
 
 
