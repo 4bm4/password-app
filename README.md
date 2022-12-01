@@ -2,7 +2,7 @@
 
 ![APM](https://img.shields.io/apm/l/vim-mode?style=plastic)
   <div align="center">
-  <img src="https://user-images.githubusercontent.com/118636000/205105412-dd3d0db2-bfba-4daf-97dc-8284926f7eac.png"  width="300"/>
+  <img src="https://user-images.githubusercontent.com/118636000/205115554-2e88d73f-be8b-45f8-b689-e98b303cb12f.png"  width="400"/>
   </div>
   
 
