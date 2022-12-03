@@ -9,11 +9,13 @@ port='http://127.0.0.1:8000/'
 @app.route('/', methods=["POST", "GET"])
 def index():
     if (request.method == "POST"):
-        pag =  request.form["borrar"]
-        usu =  request.form["borrar_usu"]
+        if ( request.form["borrar"]):
+            pag =  request.form["borrar"]
+            usu =  request.form["borrar_usu"]
+            
+            delect (pag,usu)
+            return (render_template("index.html"))
         
-        delect (pag,usu)
-        return (render_template("index.html"))
     else:
         create_tabla ()
         create_tabla_backup()
@@ -72,6 +74,16 @@ def list():
         return render_template("seach.html",rows = rows)
     else:
          return (render_template("buscador_pag.html"))
+
+# @app.route('/edit', methods=["POST","GET"])
+# def list():
+#     if (request.method == "POST"):
+#         pag =  request.form["pag"]
+#         result=buscar_pag(pag)
+#         rows =result
+#         return render_template("edit.html")
+#     else:
+#          return (render_template("buscador_pag.html"))
 
 
 if __name__ == "__main__":
