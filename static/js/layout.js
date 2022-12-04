@@ -81,11 +81,33 @@ function copiar(lo_que_copias) {
 }
 
 function formulario() {
+    let elemen;
     
     if(eliminar.childElementCount===1)
     {
-        var elemen= document.getElementById('formu')
-        elemen.parentNode.removeChild(elemen)
+        if (document.getElementById('formu')){
+        elemen= document.getElementById('formu');
+        elemen.parentNode.removeChild(elemen);
+        }
+        if (document.getElementById('edit')){
+
+            elemen= document.getElementById('edit');
+            elemen.parentNode.removeChild(elemen);
+            eliminar.innerHTML+=
+            ` 
+            <form  id="formu" action="#" method="POST">
+    
+            <h2 class="titulo">Delete page</h2>
+            <br class="field">
+            <input type="text" name="borrar" id="borrar" placeholder="Page" required/></br>
+            <input type="text" name="borrar_usu" id="borrar_usu" placeholder="User (Optinal)"/></br>
+            <input type="submit" value="Delete" />
+            <br>
+    
+            </form>
+            ` 
+            }
+        
         
     }
     else{
@@ -109,11 +131,33 @@ function formulario() {
 
 
 function formulario_edit() {
+    let elemen;
     
     if(eliminar.childElementCount===1)
     {
-        var elemen= document.getElementById('edit')
-        elemen.parentNode.removeChild(elemen)
+        if (document.getElementById('edit')){
+            elemen= document.getElementById('edit');
+            elemen.parentNode.removeChild(elemen);
+            }
+        if (document.getElementById('formu')){
+            elemen= document.getElementById('formu');
+            elemen.parentNode.removeChild(elemen);
+
+            eliminar.innerHTML+=
+            ` 
+            <form  id="edit" action="#" method="POST">
+    
+            <h2 class="titulo">Edit</h2>
+            <br class="field">
+            <input type="text" name="editar" id="editar" placeholder="ID" /></br>
+            <input type="submit" value="Editar" />
+            <br>
+    
+            </form>
+            ` 
+
+            }
+            
         
     }
     else{
@@ -143,7 +187,7 @@ function buscador() {
             paginas.push(...datos);
         }
         )
-        // console.log(paginas)
+       
     return(paginas)
 }
 
@@ -160,19 +204,7 @@ const suggestions = document.querySelector('.suggestions');
 search.addEventListener('keyup', displayMatches);
 
 const paginas=buscador();
-// function displayMatches(e) {
-//     const matchedArray = findMatches(e.target.value, paginas);
-//     const html = matchedArray.map(pagina => {
-//         return `
-//         <li>
-//             <span class="PAGINA">${pagina.pag}</span>
-         
-//         </li>
-//     `;
-// }).join('');
-// console.log(html);
-// suggestions.innerHTML = html;
-// }
+
 
 function displayMatches(e) {
     const matchedArray = findMatches(e.target.value, paginas);
