@@ -92,13 +92,60 @@ def delect(pag:str,usu:str):
             if (i.pag == pag):
                 delect_element(i.id)
 
-
-def editar(pag, nuevo: str):
+#editar usuario
+def editar_usu(ID, nuevo_usu: str):
     elementos = buscar_todas()
-    for i in elementos:
-        if (i.pag == pag):
-            update_element_usu(i.id, nuevo)
+    for elemento in elementos:
+        if (elemento.id==ID):
+            clase=elemento
+    clase.usu=nuevo_usu    
+    clase_encrip = all_cryp(clase)
+    insert_element("psswords_backup.db",clase_encrip)
+    insert_element("psswords.db",clase_encrip)
 
+
+#editar pag   
+def editar_(ID, nuevo_pag='', nuevo_pss='',nuevo_usu='' ):
+    elementos = buscar_todas()
+
+    for elemento in elementos:
+        if (elemento.id==ID):
+            clase=elemento
+
+    if (nuevo_pag!=''):
+        clase.pag=nuevo_pag
+    if (nuevo_pss!=''):
+        clase.password=[nuevo_pss]
+    if (nuevo_usu!=''):
+        clase.usu=nuevo_usu
+
+    delect_element(ID)
+
+    clase_encrip = all_cryp(clase)
+    insert_element("psswords_backup.db",clase_encrip)
+    insert_element("psswords.db",clase_encrip)
+
+
+# def editar_pag(ID, nuevo_pag: str):
+#     elementos = buscar_todas()
+#     for elemento in elementos:
+#         if (elemento.id==ID):
+#             clase=elemento
+#     clase.pag=nuevo_pag    
+#     clase_encrip = all_cryp(clase)
+#     insert_element("psswords_backup.db",clase_encrip)
+#     insert_element("psswords.db",clase_encrip)
+
+# #editar password   
+# def editar_password(ID, nuevo_pss: str):
+#     elementos = buscar_todas()
+#     for elemento in elementos:
+#         if (elemento.id==ID):
+#             clase=elemento
+#     clase.password=nuevo_pss    
+#     clase_encrip = all_cryp(clase)
+#     insert_element("psswords_backup.db",clase_encrip)
+#     insert_element("psswords.db",clase_encrip)   
 
 def asdict(clase):
     return {'fecha': clase.fecha,

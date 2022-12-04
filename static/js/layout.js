@@ -108,6 +108,33 @@ function formulario() {
 }
 
 
+function formulario_edit() {
+    
+    if(eliminar.childElementCount===1)
+    {
+        var elemen= document.getElementById('edit')
+        elemen.parentNode.removeChild(elemen)
+        
+    }
+    else{
+    
+        eliminar.innerHTML+=
+        ` 
+        <form  id="edit" action="#" method="POST">
+
+        <h2 class="titulo">Edit</h2>
+        <br class="field">
+        <input type="text" name="editar" id="editar" placeholder="ID" /></br>
+        <input type="submit" value="Editar" />
+        <br>
+
+        </form>
+        ` 
+    }
+
+}
+
+
 function buscador() {
     const paginas=[];
     fetch("./password")

@@ -1,0 +1,42 @@
+
+{% extends './layout.html' %}
+
+{% block title %}
+
+<center><h1 class="banner">PSSWORDS</h1> </center>
+
+{% endblock %}
+
+{% block body %}
+
+
+
+<body>
+    <div class="nav">
+        <ul>
+    
+            <li ><a href="http://127.0.0.1:8000" >Home</a>
+            </li>
+        </ul>
+        </div>
+
+    <form action="#" method="POST">
+        <h2 class="titulo">Edit</h2>
+        
+        <br >
+        <input type="text" name="editar_usu" id="editar_usu" placeholder="User" maxlength="50" /></br>
+
+        <br>
+        <input type="text" name="editar_pag" id="editar_pag" placeholder="Page" maxlength="50"/></br>
+
+        <br>
+        <input type="text" name="editar_pss" id="editar_pss" placeholder="Password" maxlength="22"/></br>
+        
+        <input type="submit" value="Upload" /><br>
+    </form>
+
+</body>
+
+
+
+{% endblock %}

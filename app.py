@@ -9,11 +9,19 @@ port='http://127.0.0.1:8000/'
 @app.route('/', methods=["POST", "GET"])
 def index():
     if (request.method == "POST"):
-        pag =  request.form["borrar"]
-        usu =  request.form["borrar_usu"]
-        
-        delect (pag,usu)
-        return (render_template("index.html"))
+        try:
+            pag =  request.form["borrar"]
+            usu =  request.form["borrar_usu"]
+            
+            delect (pag,usu)
+            return (render_template("index.html"))
+        except:
+            print("An exception occurred") 
+        try :
+            id =  request.form["editar"]
+            return (redirect ('http://127.0.0.1:8000/editar/'+id))
+        except:
+            print("An exception occurred 2") 
     else:
         create_tabla ()
         create_tabla_backup()
@@ -72,6 +80,19 @@ def list():
         return render_template("seach.html",rows = rows)
     else:
          return (render_template("buscador_pag.html"))
+
+@app.route('/editar/<id>', methods=["POST","GET"])
+def edit_web(id):
+    if (request.method == "POST"):
+        pag =  request.form["editar_pag"]
+        usu =  request.form["editar_usu"]
+        pss =  request.form["editar_pss"]  
+       
+        editar_(id, pag,pss,usu)
+
+        return redirect ('http://127.0.0.1:8000/')
+    else:
+         return (render_template("edit.html"))
 
 
 if __name__ == "__main__":

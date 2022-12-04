@@ -83,7 +83,7 @@ def select_varios_pag(pag):
     db.close()
     return elemento    
 
-
+#editar usuario
 def update_element_usu(id,elemeto_a_act):
     db=sqlite3.connect('psswords.db')
     manejo_db= db.cursor()
@@ -91,10 +91,19 @@ def update_element_usu(id,elemeto_a_act):
     db.commit()
     db.close()
 
+#editar password
 def update_element_pss(id,elemeto_a_act):
     db=sqlite3.connect('psswords.db')
     manejo_db= db.cursor()
     manejo_db.execute("UPDATE psswords SET password=? WHERE id=?",(elemeto_a_act,id))
+    db.commit()
+    db.close()
+
+#editar pag
+def update_element_pss(id,elemeto_a_act):
+    db=sqlite3.connect('psswords.db')
+    manejo_db= db.cursor()
+    manejo_db.execute("UPDATE psswords SET pagina=? WHERE id=?",(elemeto_a_act,id))
     db.commit()
     db.close()
 
