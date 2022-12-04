@@ -50,6 +50,7 @@ def insert_element(DB:str,elemento):
 
 
 def select_element(id):
+    
     db=sqlite3.connect('psswords.db')
     manejo_db= db.cursor()
     manejo_db.execute("SELECT * FROM psswords WHERE id=?",(id,))
@@ -58,6 +59,7 @@ def select_element(id):
     return elemento
 
 def select_element_pag(pag):
+    
     db=sqlite3.connect('psswords.db')
     manejo_db= db.cursor()
     manejo_db.execute("SELECT * FROM psswords WHERE pagina=?",(pag,))
@@ -66,6 +68,7 @@ def select_element_pag(pag):
     return elemento    
 
 def select_element_all():
+    
     db=sqlite3.connect('psswords.db')
     manejo_db= db.cursor()
     manejo_db.execute("SELECT * FROM psswords ")
@@ -127,22 +130,23 @@ def delect_element(id):
     db.close()
 
 def sacar_pags():
-    db=sqlite3.connect('psswords.db')
-    manejo_db= db.cursor()
-    manejo_db.execute("SELECT pagina FROM psswords ")
-    elemento=manejo_db.fetchall()
-    db.close()
+    if( os.path.isfile("our_k.key")):
+        db=sqlite3.connect('psswords.db')
+        manejo_db= db.cursor()
+        manejo_db.execute("SELECT pagina FROM psswords ")
+        elemento=manejo_db.fetchall()
+        db.close()
 
-    if (isinstance(elemento,tuple)):
+        if (isinstance(elemento,tuple)):
 
-        return(elemento[0])
+            return(elemento[0])
 
-    elif (isinstance(elemento,list)):
-        clase=[]
+        elif (isinstance(elemento,list)):
+            clase=[]
 
-        for i in elemento:
-            clase.append( i[0])
+            for i in elemento:
+                clase.append( i[0])
 
-    return clase    
+        return clase    
 
 

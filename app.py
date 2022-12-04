@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request,render_template,redirect,url_for
 from datetime import *
 from main import *
+import os.path
+
+
 
 app = Flask(__name__)
 
@@ -16,13 +19,16 @@ def index():
             delect (pag,usu)
             return (render_template("index.html"))
         except:
-            print("An exception occurred") 
+            print("Not delete method found") 
         try :
             id =  request.form["editar"]
             return (redirect ('http://127.0.0.1:8000/editar/'+id))
         except:
-            print("An exception occurred 2") 
+            print("Not edit method found") 
     else:
+        if (os.path.isfile('psswords.db') and not os.path.isfile('our_k.key')):
+            return render_template("not_key.html")
+            
         create_tabla ()
         create_tabla_backup()
         return (render_template("index.html"))
@@ -30,8 +36,9 @@ def index():
 
 @app.route('/password', methods=["GET"])
 def get_passwords():
-    Passwords = buscar_todas()
-    return jsonify(Passwords)
+    if ( os.path.isfile('our_k.key')):
+        Passwords = buscar_todas()
+        return jsonify(Passwords)
 
 
 @app.route("/password/incluir", methods=["POST", "GET"])

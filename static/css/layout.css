@@ -205,7 +205,29 @@ li a:hover{
     
   }
 
-  /* .field:has(input:required) label::after{
-    content: "*";
-    color:aquamarine
-  } */
+ 
+.Error{
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: center;
+    color:#ffffff;
+    background-color: red;
+    font-size: 45px;
+    
+    font-family: sans-serif;
+}
+  .Error span{
+    display: inline-block;
+    padding-left: 100%;
+    animation: Error 10s linear infinite
+  }
+  
+  @keyframes Error {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }

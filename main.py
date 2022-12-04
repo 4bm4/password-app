@@ -126,27 +126,6 @@ def editar_(ID, nuevo_pag='', nuevo_pss='',nuevo_usu='' ):
     insert_element("psswords.db",clase_encrip)
 
 
-# def editar_pag(ID, nuevo_pag: str):
-#     elementos = buscar_todas()
-#     for elemento in elementos:
-#         if (elemento.id==ID):
-#             clase=elemento
-#     clase.pag=nuevo_pag    
-#     clase_encrip = all_cryp(clase)
-#     insert_element("psswords_backup.db",clase_encrip)
-#     insert_element("psswords.db",clase_encrip)
-
-# #editar password   
-# def editar_password(ID, nuevo_pss: str):
-#     elementos = buscar_todas()
-#     for elemento in elementos:
-#         if (elemento.id==ID):
-#             clase=elemento
-#     clase.password=nuevo_pss    
-#     clase_encrip = all_cryp(clase)
-#     insert_element("psswords_backup.db",clase_encrip)
-#     insert_element("psswords.db",clase_encrip)   
-
 def asdict(clase):
     return {'fecha': clase.fecha,
             'usu': clase.usu,
