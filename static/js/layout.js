@@ -150,7 +150,7 @@ function formulario_edit() {
             <h2 class="titulo">Edit</h2>
             <br class="field">
             <input type="text" name="editar" id="editar" placeholder="ID" /></br>
-            <input type="submit" value="Editar" />
+            <input type="submit" value="Edit" />
             <br>
     
             </form>
@@ -169,7 +169,7 @@ function formulario_edit() {
         <h2 class="titulo">Edit</h2>
         <br class="field">
         <input type="text" name="editar" id="editar" placeholder="ID" /></br>
-        <input type="submit" value="Editar" />
+        <input type="submit" value="Edit" />
         <br>
 
         </form>

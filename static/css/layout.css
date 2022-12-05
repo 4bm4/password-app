@@ -213,9 +213,11 @@ li a:hover{
     position: center;
     color:#ffffff;
     background-color: red;
-    font-size: 45px;
-    
+    font-size: 65px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     font-family: sans-serif;
+    transform: translate(0%, 175%);
 }
   .Error span{
     display: inline-block;
@@ -228,6 +230,6 @@ li a:hover{
       transform: translate(0, 0);
     }
     100% {
-      transform: translate(-100%, 0);
+      transform: translate(-110%, 0);
     }
   }
