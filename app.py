@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request,render_template,redirect,url_for
 from datetime import *
 from main import *
 import os.path
+from password.encryp import generat_key
 
 
 
@@ -101,6 +102,14 @@ def edit_web(id):
     else:
          return (render_template("edit.html"))
 
+@app.route('/generatekey', methods=["GET"])
+def generatekey():
+    if ( not os.path.isfile('our_k.key')):
+        generat_key ()
+        create_tabla()
+        create_tabla_backup()
+    
+    return redirect ('http://127.0.0.1:8000/')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8000, debug=True)
